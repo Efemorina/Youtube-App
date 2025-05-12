@@ -2,13 +2,18 @@
   <div class="container">
     <h1 class="title">Youtube App</h1>
     <SearchBar @termChange="onTermChange" />
-    <VideoList @videoSelect="onVideoSelect" :videos="videos" />
+    <div>
+      <VideoDetail :video="selectedVideo"/>
+      <VideoList @videoSelect="onVideoSelect" :videos="videos" />
+    </div>
+
   </div>
 </template>
 
 <script>
 import SearchBar from "@/components/SearchBar.vue";
 import VideoList from "@/components/VideoList.vue";
+import VideoDetail from "@/components/VideoDetail.vue";
 import axios from "axios";
 
 export default {
@@ -16,6 +21,7 @@ export default {
   components: {
     SearchBar,
     VideoList,
+    VideoDetail,
   },
   data() {
     return {
@@ -38,7 +44,7 @@ export default {
           },
         })
         .then((response) => {
-          //  console.log(response);
+            console.log(response);
           this.videos = response.data.items;
         })
         .catch((error) => {

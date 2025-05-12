@@ -1,6 +1,6 @@
 <template>
   <ul class="videoList">
-    <VideoListItem @video-select="onVideoSelect" v-for=" video in videos" :key="video.etag" :video="video"/>
+    <VideoListItem @videoSelect="onVideoSelect" v-for=" video in videos" :key="video.etag" :video="video"/>
   </ul>
 </template>
 
