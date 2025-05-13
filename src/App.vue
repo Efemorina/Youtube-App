@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="title">Youtube App</h1>
     <SearchBar @termChange="onTermChange" />
-    <div>
+    <div class="deatilDiv">
       <VideoDetail :video="selectedVideo"/>
       <VideoList @videoSelect="onVideoSelect" :videos="videos" />
     </div>
@@ -67,5 +67,8 @@ export default {
 }
 .title {
   text-align: center;
+}
+.deatilDiv{
+  display: flex;
 }
 </style>
